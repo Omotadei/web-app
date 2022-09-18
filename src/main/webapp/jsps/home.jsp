@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Omotade Ikueje</h1>
+<h1 align="center">Omotade</h1>
 <h1 align="center">Jenkins-Maven-Tomcat Integration Practice</h1>
 <h1 align="center">Welcome to Acada Learning, Calgary, Canada Office.</h1>
 <h1 align="center">Omotade is a student of Acada</h1>
