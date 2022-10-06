@@ -19,6 +19,6 @@ sh "echo backup to Nexus"
 }
 stage('DeploytoTomcat'){
 sh "echo Deploy to Tomcat server"
-deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://46.137.54.97:7070/')], contextPath: null, war: 'target/*.war'
+deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://34.242.63.198:7070/')], contextPath: null, war: 'target/*.war'
 }
 }
