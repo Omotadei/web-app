@@ -1,0 +1,24 @@
+//scripted
+node(""){
+def MHD = tool name: "maven3.8.6"
+stage('GitClone'){
+sh "echo this is git clone"
+git credentialsId: 'GitHub-cred', url: 'https://github.com/Omotadei/web-app.git'
+}
+stage('Build'){
+sh "echo start of build process"
+sh "${MHD}/bin/mvn package"
+}
+stage('CodeQuality'){
+sh "echo performing SonarQube Test"
+//sh "${MHD}/bin/mvn sonar:sonar"
+}
+stage('BackupArtifacts'){
+sh "echo backup to Nexus"
+//sh "${MHD}/bin/mvn deploy"
+}
+stage('DeploytoTomcat'){
+sh "echo Deploy to Tomcat server"
+deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://46.137.54.97:7070/')], contextPath: null, war: 'target/*.war'
+}
+}
